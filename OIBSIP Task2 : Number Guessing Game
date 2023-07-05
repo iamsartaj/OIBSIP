@@ -1,0 +1,68 @@
+/** Sartaj Ahmad
+ * Java program that allows user to guess a generated random number.
+ * @author @imsirtaj
+ */
+
+package Projects;
+import java.util.Scanner;
+public class GuessTheNumber {
+
+	public static void main(String[] args) {
+		System.out.println("---------------------------------------------------");
+		System.out.println("|                 Guess the Number                |");
+		System.out.print("---------------------------------------------------");
+		System.out.println();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("|     Enter your guessed number from 1 to 100     |");
+		System.out.println("|               You have 5 attempts               |");
+		System.out.println("|                                                 |");
+		int rndmnum = (int)(Math.random()*100) + 1;
+        boolean flag = false;
+        byte score = 100;
+        byte attempt = 4;
+        while(!flag) {
+        	System.out.print("| ");
+        	int usrnum = sc.nextInt();
+        	if(usrnum == rndmnum) {
+        		System.out.println("|              This is correct number             |");
+        		System.out.println("|         Congratulations! You won the game       |");
+        		System.out.println("|                 Your score is " + score + "                |");
+        		System.out.print("---------------------------------------------------");
+        		flag = true;
+        	}
+        	else if(usrnum < rndmnum && attempt != 0) {
+        		System.out.println("| Your number is LOW                              |");
+        		if(attempt == 1) {
+        			System.out.println("| Guess a number again, this is your last attempt |");
+        			System.out.println("| ");
+        		}
+        		else {
+        			System.out.println("| Guess a number again, now you have " + attempt + " attempts   |");
+        			System.out.println("| ");
+        		}
+        		score -= 20;
+        		attempt--;
+        	}
+        	else if(usrnum > rndmnum  && attempt != 0) {
+        		System.out.println("| Your number is HIGH                             |");
+        		if(attempt == 1) {
+        			System.out.println("| Guess a number again, this is your last attempt |");
+        			System.out.println("| ");
+        		}
+        		else {
+        			System.out.println("| Guess a number again, now you have " + attempt + " attempts   |");
+        			System.out.println("| ");
+        		}
+        		score -= 20;
+        		attempt--;
+        	}
+        	else {
+        		score -= 20;
+        		System.out.println("|             Sorry! You lost the game            |");
+        		System.out.println("|                 Your score is " + score + "                 |");
+        		System.out.print("---------------------------------------------------");
+        		flag = true;
+        	} 	
+        } 
+	}
+}
