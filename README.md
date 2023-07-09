@@ -13,7 +13,7 @@ Whenever a user uses this application, first of all, they will have to validate 
 1) Transactions History: To check the transactions the user has completed.
 2) Deposit: If the user wants to deposit the fund in his account, he can also deposit the amount by entering the amount.
 3) Withdraw: If the user wants to withdraw the amount from his account, he can collect the cash in multiples of 100 from this machine by 
-             providing the correct details. Notice that the amount must be more than or equal to the available balance.
+             providing the correct details, the amount must be less than or equal to the available balance.
 4) Transfer: If the user wants to transfer some amount from his account to someone else’s account, he will have to provide the correct account 
              number and the amount he wants to transfer.
 5) Balance Inquiry: The user can check the current available balance in their account.
